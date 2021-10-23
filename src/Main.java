@@ -22,7 +22,7 @@ public class Main {
 
         graph.addEdge("A","B",5);
         graph.addEdge("A","C",1);
-        graph.addEdge("B","E",6);
+        graph.addEdge("B","E",60);
         graph.addEdge("C","D",2);
         graph.addEdge("C","G",12);
         graph.addEdge("D","E",3);
@@ -33,7 +33,7 @@ public class Main {
         graph.addEdge("G","H",3);
         graph.addEdge("G","F",2);
         graph.addEdge("I","H",4);
-        graph.addEdge("I","J",2);
+        graph.addEdge("I","J",20);
 
 
         int fuel;
