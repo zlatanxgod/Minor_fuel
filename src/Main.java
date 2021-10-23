@@ -10,19 +10,31 @@ public class Main {
         WeightedGraph graph= new WeightedGraph();
 
         graph.addNode("A");
-        graph.addNode("B");
-
+        graph.addNode("B",true);
         graph.addNode("C");
-        graph.addNode("D",true);
+        graph.addNode("D");
         graph.addNode("E");
+        graph.addNode("F");
+        graph.addNode("G");
+        graph.addNode("H");
+        graph.addNode("I",true);
+        graph.addNode("J",true);
 
-        graph.addEdge("A","B",3);
-        graph.addEdge("A","C",4);
-        graph.addEdge("A","D",2);
-        graph.addEdge("C","D",1);
-        graph.addEdge("B","E",1);
-        graph.addEdge("D","E",5);
-        graph.addEdge("B","D",6);
+        graph.addEdge("A","B",5);
+        graph.addEdge("A","C",1);
+        graph.addEdge("B","E",6);
+        graph.addEdge("C","D",2);
+        graph.addEdge("C","G",12);
+        graph.addEdge("D","E",3);
+        graph.addEdge("E","J",4);
+        graph.addEdge("E","I",8);
+        graph.addEdge("E","F",1);
+
+        graph.addEdge("G","H",3);
+        graph.addEdge("G","F",2);
+        graph.addEdge("I","H",4);
+        graph.addEdge("I","J",2);
+
 
         int fuel;
         System.out.print("Starting Point : ");
@@ -45,5 +57,9 @@ public class Main {
 
         //System.out.println(path);
         //graph.print();
+
+
+
+
     }
 }

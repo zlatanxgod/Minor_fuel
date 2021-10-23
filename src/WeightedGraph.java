@@ -251,7 +251,10 @@ public class WeightedGraph {
 
        List<NodeEntry> fuelpumps = new ArrayList<>();
         for(var item : nodes.values()){
-            if(item.fuel) fuelpumps.add(new NodeEntry(item,distances.get(item)));
+            if(item.fuel) {
+                if(distances.get(item) <= fuel)
+                fuelpumps.add(new NodeEntry(item, distances.get(item)));
+            }
         }
 
         Collections.sort(fuelpumps, new Comparator<NodeEntry>() {
@@ -261,7 +264,7 @@ public class WeightedGraph {
             }
         });
 
-        if(fuelpumps.get(0).priority > fuel){
+        if(fuelpumps.isEmpty()){
             return "This journey is not possible in current circumstances ";
         }
 
@@ -282,15 +285,11 @@ public class WeightedGraph {
        String ans = "";
        Path fromToPump = getShortestPath(from,ne.node.label);
        ans += fromToPump;
-       ans =ans.substring(0,ans.length()-2);
+       ans =ans.substring(0,ans.length()-1);
 
        Path fromPumpToDesination = getShortestPath(ne.node.label,to);
        ans+= fromPumpToDesination;
        return ans;
-
-
-
-
 
 
     }
