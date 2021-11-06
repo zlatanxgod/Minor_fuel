@@ -7,6 +7,7 @@ public class Path {
     List<String> nodelist = new ArrayList<>();
 
     public void add(String node){
+
         nodelist.add(node);
     }
 

@@ -34,29 +34,57 @@ public class Main {
         graph.addEdge("G","F",2);
         graph.addEdge("I","H",4);
         graph.addEdge("I","J",20);
+        int choose;
+
+        do {
+            System.out.println("\n**********************************************************************");
+            System.out.println("| Vehicle Routing using Dijkstra algorithm and its analysis using ML |");
+            System.out.println("*********************** MINOR PROJECT 1 ******************************");
+            System.out.println("\n********************** Lets Get Started ******************");
+            System.out.println("Press 1 : Print The Graph On Console ");
+            System.out.println("Press 2 : Find The Shortest Route ");
+            System.out.println("Press 3 : Exit");
+            System.out.print("Please Select Option From Above: ");
+            choose=scan.nextInt();
+
+            switch (choose){
+                case 1:
+                    graph.print();
+                    break;
+                case 2:
+                    int fuel;
+                    System.out.print("Starting Point : ");
+                    String start = scan.next();
+                    System.out.print("Destination : ");
+                    String end = scan.next();
+                    System.out.print("Current fuel in Car : ");
+                    fuel = scan.nextInt();
+                    String ans ;
+
+                    Path path = graph.getShortestPath(start,end);
+                    System.out.println(path);
+                    int dist = graph.shortestpathLength(start,end);
+                    if(dist> fuel){
+                      System.out.println("We are trying to redirect current path...");
+                      String redirect = graph.redirectedPath(start,end,fuel);
+                      System.out.println(redirect);
+                    }
+
+                   // System.out.println(path);
+                    break;
+                case  3:
+                    break;
+
+                default:
+                    System.out.println("Wrong Choice! Please select the correct option");
+                    break;
+
+            }
+        } while(choose!=3);
 
 
-        int fuel;
-        System.out.print("Starting Point : ");
-        String start = scan.nextLine();
-        System.out.print("Destination : ");
-        String end = scan.nextLine();
-        System.out.print("Current fuel in Car : ");
-        fuel = scan.nextInt();
-        String ans ;
+//
 
-        Path path = graph.getShortestPath(start,end);
-        System.out.println(path);
-        int dist = graph.shortestpathLength(start,end);
-        if(dist> fuel){
-            System.out.println("We are trying to redirect current path...");
-            String redirect = graph.redirectedPath(start,end,fuel);
-            System.out.println(redirect);
-        }
-
-
-        //System.out.println(path);
-        //graph.print();
 
 
 
