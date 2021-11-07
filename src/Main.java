@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -37,14 +38,14 @@ public class Main {
         int choose;
 
         do {
-            System.out.println("\n**********************************************************************");
-            System.out.println("| Vehicle Routing using Dijkstra algorithm and its analysis using ML |");
-            System.out.println("*********************** MINOR PROJECT 1 ******************************");
-            System.out.println("\n********************** Lets Get Started ******************");
-            System.out.println("Press 1 : Print The Graph On Console ");
-            System.out.println("Press 2 : Find The Shortest Route ");
-            System.out.println("Press 3 : Exit");
-            System.out.print("Please Select Option From Above: ");
+            System.out.println("\n\t\t\t\t\t\t\t\t**********************************************************************");
+            System.out.println("\t\t\t\t\t\t\t\t| Vehicle Routing using Dijkstra algorithm and its analysis using ML |");
+            System.out.println("\t\t\t\t\t\t\t\t*********************** MINOR PROJECT 1 ******************************");
+            System.out.println("\n\t\t\t\t\t\t\t\t********************** Lets Get Started ******************");
+            System.out.println("\t\t\t\t\t\t\t\tPress 1 : Print The Graph On Console ");
+            System.out.println("\t\t\t\t\t\t\t\tPress 2 : Find The Shortest Route ");
+            System.out.println("\t\t\t\t\t\t\t\tPress 3 : Exit");
+            System.out.print("\t\t\t\t\t\t\t\tPlease Select Option From Above: ");
             choose=scan.nextInt();
 
             switch (choose){
@@ -54,9 +55,9 @@ public class Main {
                 case 2:
                     int fuel;
                     System.out.print("Starting Point : ");
-                    String start = scan.next();
+                    String start = scan.next().toUpperCase();
                     System.out.print("Destination : ");
-                    String end = scan.next();
+                    String end = scan.next().toUpperCase();
                     System.out.print("Current fuel in Car : ");
                     fuel = scan.nextInt();
                     String ans ;
