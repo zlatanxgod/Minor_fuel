@@ -53,23 +53,7 @@ public class Main {
                     graph.print();
                     break;
                 case 2:
-                    int fuel;
-                    System.out.print("Starting Point : ");
-                    String start = scan.next().toUpperCase();
-                    System.out.print("Destination : ");
-                    String end = scan.next().toUpperCase();
-                    System.out.print("Current fuel in Car : ");
-                    fuel = scan.nextInt();
-                    String ans ;
-
-                    Path path = graph.getShortestPath(start,end);
-                    System.out.println(path);
-                    int dist = graph.shortestpathLength(start,end);
-                    if(dist> fuel){
-                      System.out.println("We are trying to redirect current path...");
-                      String redirect = graph.redirectedPath(start,end,fuel);
-                      System.out.println(redirect);
-                    }
+                    finalDetails(graph);
 
                    // System.out.println(path);
                     break;
@@ -90,5 +74,43 @@ public class Main {
 
 
 
+    }
+    public static void finalDetails( WeightedGraph graph) {
+        int fuel;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Starting Point : ");
+        String start = scan.next().toUpperCase();
+        System.out.print("Destination : ");
+        String end = scan.next().toUpperCase();
+        System.out.print("Current fuel in Car : ");
+        fuel = scan.nextInt();
+        String ans;
+
+        Path path = graph.getShortestPath(start, end);
+        System.out.println("************************");
+        System.out.println("|         Status       |" );
+        System.out.println("|                      |");
+        System.out.println("| Source: "+start+"            |");
+        System.out.println("| Destination: "+end+"       |");
+        System.out.println("| Fuel in the car: "+fuel+" |");
+        System.out.println("| Path: "+path+"  |");
+        System.out.println("| Distance Covered:          |");
+        System.out.println("************************");
+        int dist = graph.shortestpathLength(start, end);
+        if (dist > fuel) {
+            System.out.println("\nWe are trying to redirect current path...");
+            String redirect = graph.redirectedPath(start, end, fuel);
+
+            System.out.println("\n*****************************");
+            System.out.println("|        New Status        |" );
+            System.out.println("|                          |");
+            System.out.println("| Source: "+start+"                |");
+            System.out.println("| Destination: "+end+"           |");
+            System.out.println("| Fuel in the car: "+fuel+"       |");
+            System.out.println("| New Path: "+redirect+"  |");
+            System.out.println("| Distance Covered:        |");
+            System.out.println("*****************************");
+            //System.out.println(redirect);
+        }
     }
 }
