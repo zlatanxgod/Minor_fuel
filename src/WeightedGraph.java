@@ -42,7 +42,8 @@ public class WeightedGraph {
 
         @Override
         public String toString() {
-            return  from+"->"+to ;
+
+            return  from+"->"+to+" Weight: "+weight ;
         }
     }
 
