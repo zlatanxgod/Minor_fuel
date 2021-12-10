@@ -38,10 +38,12 @@ public class Main {
         int choose;
 
         do {
+        	System.out.println("\n\t\t\t\t\t\t\t\t**********************************************************************");
             System.out.println("\n\t\t\t\t\t\t\t\t**********************************************************************");
             System.out.println("\t\t\t\t\t\t\t\t| Vehicle Routing using Dijkstra algorithm and its analysis using ML |");
             System.out.println("\t\t\t\t\t\t\t\t*********************** MINOR PROJECT 1 ******************************");
             System.out.println("\n\t\t\t\t\t\t\t\t********************** Lets Get Started ******************");
+            System.out.println("\n\t\t\t\t\t\t\t\t**********************************************************************");
             System.out.println("\t\t\t\t\t\t\t\tPress 1 : Print The Graph On Console ");
             System.out.println("\t\t\t\t\t\t\t\tPress 2 : Find The Shortest Route ");
             System.out.println("\t\t\t\t\t\t\t\tPress 3 : Exit");
